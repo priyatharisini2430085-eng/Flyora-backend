@@ -1,0 +1,355 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flyora | Airline Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<div class="dashboard-layout"> -->
+
+  <!-- SIDEBAR -->
+  <!-- <aside class="sidebar">
+    <h2 class="logo">Flyora</h2>
+    <ul class="menu">
+      <li class="active">Dashboard</li>
+      <li>Events</li>
+      <li>Airline Details</li>
+      <li>Fare Details</li>
+      <li>Vendor Management</li>
+      <li>Contracts</li>
+      <li>Payments & Commission</li>
+      <li>Forecast</li>
+      <li class="logout">Logout</li>
+    </ul>
+  </aside>
+
+  MAIN
+  <main class="main-content">
+
+    <h1>Airline Dashboard</h1>
+
+    <div class="stats">
+      <div class="stat-card">
+        <p>Total Bookings</p>
+        <h2>24</h2>
+      </div>
+      <div class="stat-card">
+        <p>Pending Approval</p>
+        <h2>6</h2>
+      </div>
+      <div class="stat-card">
+        <p>Approved</p>
+        <h2>15</h2>
+      </div>
+      <div class="stat-card">
+        <p>Revenue</p>
+        <h2>₹12.4L</h2>
+      </div>
+    </div>
+
+    TABLE
+    <div class="table-card">
+      <h2>Recent Bookings</h2>
+
+      <table class="booking-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Date</th>
+            <th>Route</th>
+            <th>Event</th>
+            <th>Airline</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Priya</td>
+            <td>priya@gmail.com</td>
+            <td>9876543210</td>
+            <td>12-03-2026</td>
+            <td>Chennai → Delhi</td>
+            <td>Proposal</td>
+            <td>Flyora</td>
+            <td><span class="status pending">View</span></td>
+            <td>
+              <div class="action-group">
+                <button class="action-btn accept">Accept</button>
+                <button class="action-btn negotiate">Negotiate</button>
+                <button class="action-btn reject">Reject</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Arjun</td>
+            <td>arjun@gmail.com</td>
+            <td>9898989898</td>
+            <td>18-03-2026</td>
+            <td>Mumbai → Jaipur</td>
+            <td>Wedding</td>
+            <td>Flyora</td>
+            <td><span class="status pending">View</span></td>
+            <td>
+              <div class="action-group">
+                <button class="action-btn accept">Accept</button>
+                <button class="action-btn negotiate">Negotiate</button>
+                <button class="action-btn reject">Reject</button>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>Ananya</td>
+            <td>ananya@gmail.com</td>
+            <td>9123456789</td>
+            <td>22-03-2026</td>
+            <td>Bangalore → Goa</td>
+            <td>Birthday</td>
+            <td>Flyora</td>
+            <td><span class="status pending">View</span></td>
+            <td>
+              <div class="action-group">
+                <button class="action-btn accept">Accept</button>
+                <button class="action-btn negotiate">Negotiate</button>
+                <button class="action-btn reject">Reject</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+  </main>
+</div>
+ANALYTICS SECTION
+ <div class="analytics-grid">
+
+    <div class="chart-card small-chart">
+    <h3>Bookings by Event Type</h3>
+    <canvas id="eventChart"></canvas>
+     </div>
+
+     <div class="chart-card small-chart">
+     <h3>Monthly Revenue (₹ Lakhs)</h3>
+     <canvas id="revenueChart"></canvas>
+      </div>
+      <div class="chart-card small-chart">
+     <h3>Approval Status</h3>
+    <canvas id="approvalChart"></canvas>
+    </div>
+    <div class="chart-card small-chart">
+  <h3>Top Routes Demand</h3>
+  <canvas id="routesChart"></canvas>
+</div>
+
+
+   
+
+  </div>
+
+</section> -->
+
+<!-- Chart.js CDN -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Airline Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>Flyora</h2>
+    <ul>
+      <li class="active">Dashboard</li>
+      <li>Events</li>
+      <li>Airline Details</li>
+      <li>Fare Details</li>
+      <li>Vendor Management</li>
+      <li>Contracts</li>
+      <li class="logout">Logout</li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="content">
+
+    <h1>Airline Dashboard</h1>
+
+    <!-- KPI CARDS -->
+    <div class="cards">
+      <div class="card"><h3>Total Bookings</h3><p>24</p></div>
+      <div class="card"><h3>Pending</h3><p>6</p></div>
+      <div class="card"><h3>Approved</h3><p>15</p></div>
+      <div class="card"><h3>Revenue</h3><p>₹12.4L</p></div>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+      <div class="chart-box">
+        <h3>Bookings by Event</h3>
+        <canvas id="eventChart"></canvas>
+      </div>
+
+      <div class="chart-box">
+        <h3>Approval Status</h3>
+        <canvas id="statusChart"></canvas>
+      </div>
+    </div>
+
+    <!-- BOOKINGS TABLE -->
+    <div class="table-box">
+      <h2>Recent Bookings</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Phone</th>
+            <th>Date</th><th>Route</th><th>Event</th>
+            <th>Airline</th><th>Status</th><th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Priya</td>
+            <td>priya@gmail.com</td>
+            <td>9876543210</td>
+            <td>12-03-2026</td>
+            <td>Chennai → Delhi</td>
+            <td>Proposal</td>
+            <td>FY8</td>
+            <td class="pending">Pending</td>
+            <td><button class="view">View</button></td>
+          </tr>
+
+          <tr>
+            <td>Arjun</td>
+            <td>arjun@gmail.com</td>
+            <td>9898989898</td>
+            <td>18-03-2026</td>
+            <td>Mumbai → Jaipur</td>
+            <td>Wedding</td>
+            <td>FY2</td>
+            <td class="approved">Approved</td>
+            <td><button class="view">View</button></td>
+          </tr>
+           <tr>
+            <td>Alia</td>
+            <td>alia@gmail.com</td>
+            <td>8736328458</td>
+            <td>3-07-2026</td>
+            <td>Chennai → Jaipur</td>
+            <td>Wedding</td>
+            <td>FY7</td>
+            <td class="approved">Approved</td>
+            <td><button class="view">View</button></td>
+          </tr>
+           <tr>
+            <td>Dhivya</td>
+            <td>Dhivya@gmail.com</td>
+            <td>789978898</td>
+            <td>08-11-2026</td>
+            <td>Mumbai → Jaipur</td>
+            <td>Proposal</td>
+            <td>FY5</td>
+            <td class="approved">Approved</td>
+            <td><button class="view">View</button></td>
+          </tr>
+           <tr>
+            <td>Raj</td>
+            <td>Raj@gmail.com</td>
+            <td>987889898</td>
+            <td class="date">18-09-2026</td>
+            <td class="route">Delhi → Jaipur</td>
+            <td>Birthday </td>
+            <td>FY1</td>
+            <td class="approved">Approved</td>
+            <td><button class="view">View</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+<!-- ================= VENDOR MANAGEMENT ================= -->
+<section id="vendorManagement" class="card">
+  <div class="card-header">
+    <h2>Vendor Management</h2>
+    <p class="subtext">Airline-approved partners & service providers</p>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="vendor-table">
+      <thead>
+        <tr>
+          <th>Vendor Name</th>
+          <th>Category</th>
+          <th>City</th>
+          <th>Rating</th>
+          <th>Contract Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>Elite DJ Crew</td>
+          <td>Entertainment</td>
+          <td>Mumbai</td>
+          <td>⭐ 4.8</td>
+          <td><span class="status active">Active</span></td>
+          <td><button class="view-btn">View</button></td>
+        </tr>
+
+        <tr>
+          <td>Romantic Moments</td>
+          <td>Decor</td>
+          <td>Delhi</td>
+          <td>⭐ 4.9</td>
+          <td><span class="status warning">Expiring Soon</span></td>
+          <td><button class="view-btn">View</button></td>
+        </tr>
+
+        <tr>
+          <td>Sky Caterers</td>
+          <td>Catering</td>
+          <td>Bangalore</td>
+          <td>⭐ 4.6</td>
+          <td><span class="status active">Active</span></td>
+          <td><button class="view-btn">View</button></td>
+        </tr>
+
+        <tr>
+          <td>Cloud Floral Studio</td>
+          <td>Decoration</td>
+          <td>Chennai</td>
+          <td>⭐ 4.5</td>
+          <td><span class="status expired">Expired</span></td>
+          <td><button class="view-btn">View</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+  </main>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>
